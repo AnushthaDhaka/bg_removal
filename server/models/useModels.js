@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const userSchema = new mongoose.Schema({
+const useSchema = new mongoose.Schema({
     clerkId: { type: String, required: true, unique: true },
     email: { type: String, required: true, unique: true },
     photo: { type: String, required: true },
@@ -9,6 +9,6 @@ const userSchema = new mongoose.Schema({
     creditBalance: { type: Number, default: 5 }
 })
 
-const userModels = mongoose.models.user || mongoose.model("user", userSchema)
+const useModels = mongoose.models.user || mongoose.model("user", useSchema)
 
-export default userModels;
+export default useModels;
