@@ -36,7 +36,9 @@ const clerkWebhooks = async (req, res) => {
                     lastName: data.last_name,
                     photo: data.image_url
                 }
-                await userModel.findOneAndUpdate({ clerkId: data.id }, userData)
+                await userModel.findOneAndUpdate({ clerkId: data.id }, userData,{
+                    upsert:true,new:true
+                })
                 res.json({})
                 break;
             }
