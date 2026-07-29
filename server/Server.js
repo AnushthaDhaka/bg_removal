@@ -3,6 +3,7 @@ import express from 'express'
 import cors from 'cors'
 import connectDB from './configs/Mongodb.js'
 import userRouter from './routes/userRouter.js'
+import imageRouter from './routes/imageRoutes.js'
 
 //api config
 const PORT = process.env.PORT || 4000
@@ -15,4 +16,5 @@ app.use(cors())
 //API routes
 app.get('/',(req,res)=>res.send("API working"))
 app.use('/api/user',userRouter)
+app.use('/api/image',imageRouter)
 app.listen(PORT,()=>console.log("Server running on port" +PORT))
