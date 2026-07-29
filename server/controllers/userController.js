@@ -24,7 +24,7 @@ const clerkWebhooks = async (req, res) => {
                     lastName: data.last_name,
                     photo: data.image_url
                 }
-                await userModel.create(userData)
+                await useModels.create(userData)
                 res.json({})
                 break;
             }
@@ -36,7 +36,7 @@ const clerkWebhooks = async (req, res) => {
                     lastName: data.last_name,
                     photo: data.image_url
                 }
-                await userModel.findOneAndUpdate({ clerkId: data.id }, userData,{
+                await useModels.findOneAndUpdate({ clerkId: data.id }, userData,{
                     upsert:true,new:true
                 })
                 res.json({})
@@ -44,7 +44,7 @@ const clerkWebhooks = async (req, res) => {
             }
 
             case "user.deleted": {
-                await userModel.findOneAndDelete({ clerkId: data.id })
+                await useModels.findOneAndDelete({ clerkId: data.id })
                 res.json({})
                 break;
             }
