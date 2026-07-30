@@ -61,7 +61,8 @@ credit,setCredit,
 loadCreditsData,
 backendUrl,
 image,setImage,
-removeBg
+removeBg,
+resultImage,setResultImage
     }
     return(
         <AppContext.Provider value={value}>

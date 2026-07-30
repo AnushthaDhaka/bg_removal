@@ -5,4 +5,5 @@ const userRouter = express.Router()
 
 userRouter.post('/Webhooks',clerkWebhooks)
 userRouter.get('/credits',authUser,userCredits)
+//userRouter.post('/pay-razor',authUser,paymentRazorpay)
 export default userRouter
